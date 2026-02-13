@@ -94,4 +94,19 @@ SELECT *
 FROM sales
 WHERE sale_date > '2025-01-01';
 
+-- d) product name and price > 500,000
+
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price > 500000;
+
+-- e) total revenue per branch
+SELECT e.branch, SUM(s.total_amount) AS total_revenue
+FROM sales s
+JOIN employees e ON s.employee_id = e.employee_id
+GROUP BY e.branch;
+
+-- f) total sales revenue
+SELECT SUM(total_amount) AS total_revenue
+FROM sales;
 
