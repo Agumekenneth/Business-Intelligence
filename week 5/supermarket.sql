@@ -1,3 +1,4 @@
+-- AGUME KENNETH B30309 S24B38/017
 CREATE DATABASE supermarket;
 USE supermarket;
 
