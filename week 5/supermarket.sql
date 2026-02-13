@@ -79,6 +79,8 @@ INSERT INTO sales VALUES
 (1012,'2025-03-20',5,104,201,5,90000);
 
 
+-- STEP 2
+
 -- a) products in electronics
 SELECT * 
 FROM products
@@ -110,3 +112,9 @@ GROUP BY e.branch;
 SELECT SUM(total_amount) AS total_revenue
 FROM sales;
 
+-- f) number of customers per city  
+SELECT city, COUNT(*) AS total_customers
+FROM customers
+GROUP BY city;
+
+-- STEP 3
