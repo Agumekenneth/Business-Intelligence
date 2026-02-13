@@ -118,3 +118,32 @@ FROM customers
 GROUP BY city;
 
 -- STEP 3
+
+-- a) category that contributes the most revenue
+SELECT p.category, SUM(s.total_amount) AS revenue
+FROM sales s
+JOIN products p ON s.product_id = p.product_id
+GROUP BY p.category
+ORDER BY revenue DESC;
+
+-- b) branch that needs performance improvement
+
+-- Entebbe branch needs improvement
+
+-- c) seasonal sales trends
+SELECT MONTH(sale_date) AS month, SUM(total_amount) AS revenue
+FROM sales
+GROUP BY MONTH(sale_date)
+ORDER BY month;
+
+-- January has a good start, there was a moderate trend in Feburary and the most revenue was in March thus an upward revenue trend. 
+
+-- d) Most profitable customers
+SELECT c.first_name, c.last_name, SUM(s.total_amount) AS total_spent
+FROM sales s
+JOIN customers c ON s.customer_id = c.customer_id
+GROUP BY c.customer_id
+ORDER BY total_spent DESC;
+
+-- Grace Akello and David Ssempa are the most profitable customers.
+
