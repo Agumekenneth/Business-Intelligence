@@ -57,3 +57,41 @@ INSERT INTO products VALUES
 (106,'Microwave','Home and Kitchen',450000,380000),
 (107,'Body Lotion','Personal Care',25000,15000),
 (108,'Smartphone','Electronics',1500000,1200000);
+
+INSERT INTO employees VALUES
+(201,'Brian','Kato','Kampala','2023-02-01'),
+(202,'Linda','Nankya','Jinja','2023-04-15'),
+(203,'Kenneth','Tumusiime','Mbarara','2023-06-20'),
+(204,'Cynthia','Namutebi','Entebbe','2023-08-10');
+
+INSERT INTO sales VALUES
+(1001,'2025-01-05',1,101,201,1,2500000),
+(1002,'2025-01-07',2,103,202,5,275000),
+(1003,'2025-01-10',3,102,203,1,3200000),
+(1004,'2025-01-15',4,104,204,3,54000),
+(1005,'2025-02-02',5,108,201,1,1500000),
+(1006,'2025-02-05',6,105,203,2,240000),
+(1007,'2025-02-10',7,107,202,4,100000),
+(1008,'2025-02-18',1,103,201,3,165000),
+(1009,'2025-03-01',2,106,202,1,450000),
+(1010,'2025-03-05',3,101,203,1,2500000),
+(1011,'2025-03-12',4,108,204,2,3000000),
+(1012,'2025-03-20',5,104,201,5,90000);
+
+
+-- a) products in electronics
+SELECT * 
+FROM products
+WHERE category = 'Electronics';
+
+-- b) customers from kamapla
+SELECT * 
+FROM customers
+WHERE city = 'Kampala';
+
+-- c) sales after 1st January 2025
+SELECT *
+FROM sales
+WHERE sale_date > '2025-01-01';
+
+
